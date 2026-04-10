@@ -1,4 +1,4 @@
-# 🚆 RailWiseAI — Intelligent Train Journey Planner
+# RailWiseAI — Intelligent Train Journey Planner
 
 RailWiseAI is a backend system that intelligently computes and ranks train journeys between a source and destination based on multiple real-world factors such as route availability, seat status, delays, and connection feasibility.
 
@@ -6,14 +6,14 @@ It is designed as a modular, scalable Spring Boot application that simulates how
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-### 🛤️ Route Intelligence
+### Route Intelligence
 - Finds direct routes and one-stop (via) routes
 - Uses train schedule data to build valid journey paths
 - Handles multi-leg journey construction with connection validation
 
-### 🎯 Scoring Engine
+### Scoring Engine
 Routes are ranked based on a weighted scoring system:
 - Seat Availability (AVL / RAC / WL)
 - Train Delay Estimation
@@ -21,19 +21,19 @@ Routes are ranked based on a weighted scoring system:
 
 This ensures that the final output is explainable and realistic, not random.
 
-### 🚫 Hard Filtering Layer
+### Hard Filtering Layer
 Routes are filtered before scoring to eliminate invalid options:
 - Removes routes with poor availability (high WL)
 - Rejects unsafe connections (low buffer time)
 - Prevents logically inconsistent journeys
 
-### ⚡ Performance Optimization
+### Performance Optimization
 - Uses Caffeine in-memory caching
 - Implements TTL-based cache eviction (10 minutes)
 - Reduces repeated computation for identical route queries
 - Significantly improves API response time for frequent requests
 
-### 🔁 Data Provider Abstraction
+### Data Provider Abstraction
 The system supports a pluggable data source layer:
 - `LiveProvider` — API-based integration placeholder
 - `MockProvider` — Used for development and testing
@@ -42,7 +42,7 @@ Fallback mechanism ensures system resilience when live data is unavailable.
 
 ---
 
-## 🧠 System Architecture
+## System Architecture
 
 ```
 JourneyController
@@ -60,7 +60,7 @@ DataProviderService   (Live + Mock fallback)
 
 ---
 
-## 🗄️ Database Layer
+## Database Layer
 
 The system uses MySQL to store:
 - Train master data
@@ -72,7 +72,7 @@ The system uses MySQL to store:
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -85,7 +85,7 @@ The system uses MySQL to store:
 
 ---
 
-## 🛠️ Setup Instructions
+## Setup Instructions
 
 ### 1. Clone Repository
 
@@ -121,7 +121,7 @@ Application starts on: `http://localhost:8080`
 
 ---
 
-## 🧪 API Usage
+## API Usage
 
 ### Get Best Journeys
 
@@ -178,7 +178,7 @@ GET /api/journey?src=MAS&dst=SBC&date=2026-04-10
 
 ---
 
-## 🗃️ Sample Database Setup
+## Sample Database Setup
 
 ### Train Master Data
 
@@ -245,32 +245,32 @@ INSERT INTO train_delay (train_number, date, station_code, delay_minutes, source
 
 ---
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 This system is designed to be extensible. The following can be added without architectural changes:
 
-### 🚦 Rate Limiting / API Throttling
+### Rate Limiting / API Throttling
 A dedicated module for per-user request limiting and peak traffic handling.
 > I have already implemented a similar system separately — see [API Shield](https://github.com/KeyurWarkhedkar/api-shield). It can be plugged in directly.
 
-### ⚡ Distributed Caching (Redis)
+### Distributed Caching (Redis)
 Currently uses Caffeine (in-memory). In production this upgrades to:
 - Redis cache
 - Clustered, shared cache across multiple instances
 
-### 📊 Real-Time Data Integration
+### Real-Time Data Integration
 - IRCTC / Railway API integration
 - Live delay tracking
 - Dynamic seat availability updates
 
-### 🧠 Advanced Scoring
+### Advanced Scoring
 - ML-based route ranking
 - Historical delay prediction
 - Demand-based signals
 
 ---
 
-## 💡 Note for Evaluators
+## Note for Evaluators
 
 The sample dataset is intentionally small and deterministic to:
 - Ensure reproducible results
@@ -285,7 +285,7 @@ The sample dataset is intentionally small and deterministic to:
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Built by Keyur**
 

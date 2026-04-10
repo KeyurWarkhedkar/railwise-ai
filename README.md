@@ -90,7 +90,7 @@ The system uses MySQL to store:
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/your-username/railwise-ai.git
+git clone https://github.com/KeyurWarkhedkar/railwise-ai.git
 cd railwise-ai
 ```
 

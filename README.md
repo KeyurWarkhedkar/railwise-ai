@@ -114,7 +114,7 @@ spring.jpa.hibernate.ddl-auto=update
 ### 3. Run Application
 
 ```bash
-mvn spring-boot:run
+.\mvnw spring-boot:run
 ```
 
 Application starts on: `http://localhost:8080`
